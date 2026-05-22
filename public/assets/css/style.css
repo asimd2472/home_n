@@ -1,0 +1,292 @@
+/* ============================================
+   CareBond — Style + Responsive (merged)
+   ============================================ */
+
+:root{
+  --primary-blue:#1e6dff;
+  --primary-blue-dark:#1856cc;
+  --dark:#0f1c2e;
+  --text:#1f2937;
+  --muted:#6b7280;
+  --bg:#ffffff;
+  --soft:#f6f8fb;
+  --border:#e5e7eb;
+  --success:#16a34a;
+  --danger:#ef4444;
+  --orange:#f59e0b;
+  --indigo:#6366f1;
+  --shadow-sm:0 2px 8px rgba(15,28,46,.05);
+  --shadow:0 6px 24px rgba(15,28,46,.07);
+  --shadow-lg:0 18px 50px -10px rgba(15,28,46,.18);
+  --radius:14px;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;font-family:'Poppins',system-ui,sans-serif;color:var(--text);background:#fff;line-height:1.5;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+.text-primary-blue{color:var(--primary-blue)!important}
+
+/* ===== Header ===== */
+.site-header{background:#fff;border-bottom:1px solid var(--border);padding:14px 0;position:sticky;top:0;z-index:100}
+.header-inner{gap:24px}
+.logo{font-weight:700;font-size:24px;color:var(--dark);letter-spacing:1px}
+.main-nav{gap:28px}
+.main-nav .nav-link{color:#4b5563;font-size:14px;font-weight:500;padding:6px 0;position:relative}
+.main-nav .nav-link.active{color:var(--success)}
+.main-nav .nav-link.active::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:2px;background:var(--success);border-radius:2px}
+.header-search{flex:1;display:flex;gap:10px;max-width:620px}
+.location-box,.search-box{display:flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--border);border-radius:10px;padding:9px 14px;font-size:13px;color:var(--muted)}
+.location-box{min-width:230px}
+.search-box{flex:1}
+.search-box input{border:0;outline:0;background:transparent;width:100%;font-size:13px}
+.header-icons{display:flex;gap:8px}
+.icon-btn{width:38px;height:38px;border-radius:50%;border:1px solid var(--border);background:#fff;color:#374151;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;transition:.2s}
+.icon-btn:hover{background:var(--soft)}
+
+/* ===== Hero (professional banner) ===== */
+.hero-section{padding:48px 0 60px;background:linear-gradient(180deg,#fafbff 0%,#ffffff 60%)}
+.hero-title{font-size:42px;font-weight:700;color:var(--dark);line-height:1.15;margin-bottom:28px;letter-spacing:-.5px}
+.services-card{background:#fff;border:1px solid var(--border);border-radius:18px;padding:26px;box-shadow:var(--shadow)}
+.service-item{text-align:center;padding:12px 4px;cursor:pointer;border-radius:12px;transition:.2s}
+.service-item:hover{background:var(--soft);transform:translateY(-2px)}
+.service-icon{width:52px;height:52px;border-radius:14px;display:inline-flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:10px}
+.service-item p{font-size:12px;margin:0;color:#374151;font-weight:500;line-height:1.3}
+.bg-blue-soft{background:#e6efff;color:var(--primary-blue)}
+.bg-indigo-soft{background:#eef0ff;color:var(--indigo)}
+.bg-green-soft{background:#e7f7ee;color:var(--success)}
+.bg-red-soft{background:#fde7e7;color:var(--danger)}
+.bg-orange-soft{background:#fff1dc;color:var(--orange)}
+.bg-gray-soft{background:#eef2f6;color:#475569}
+
+.trust-row{display:flex;gap:12px;margin-top:22px;padding-top:20px;border-top:1px solid var(--border);flex-wrap:wrap}
+.trust-item{display:flex;align-items:center;gap:8px;font-size:12px;color:#4b5563;background:var(--soft);padding:10px 14px;border-radius:10px;flex:1;min-width:160px;font-weight:500}
+
+/* Hero gallery — Urban Company style 2x2 with tall left */
+.hero-gallery{
+  display:grid;
+  grid-template-columns:1.15fr 1fr;
+  grid-template-rows:1fr 1fr;
+  gap:14px;
+  height:560px;
+}
+.g-img{position:relative;border-radius:18px;overflow:hidden;box-shadow:var(--shadow);background:#eef2f6}
+.g-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.g-img:hover img{transform:scale(1.04)}
+.g1{grid-row:1/3}
+.g-badge{
+  position:absolute;top:14px;left:14px;
+  background:#fff;color:var(--primary-blue);
+  padding:6px 12px;border-radius:30px;
+  font-size:11px;font-weight:600;
+  display:inline-flex;align-items:center;gap:6px;
+  box-shadow:var(--shadow);
+}
+.g-badge.badge-time{color:var(--success)}
+
+/* ===== Sections base ===== */
+.section-title{text-align:center;font-weight:700;color:var(--dark);font-size:30px;margin-bottom:36px;letter-spacing:-.3px}
+
+/* ===== How It Works ===== */
+.howitworks-section{background:var(--soft);padding:64px 0}
+.steps-wrap{display:flex;align-items:stretch;justify-content:center;gap:14px;flex-wrap:nowrap}
+.step-card{
+  background:#fff;border:1px solid var(--border);border-radius:16px;
+  padding:24px;flex:1 1 0;min-width:0;max-width:260px;
+  box-shadow:var(--shadow-sm);transition:.25s;
+  display:flex;flex-direction:column;align-items:flex-start;
+}
+.step-card:hover{box-shadow:var(--shadow);transform:translateY(-3px)}
+.step-icon{width:52px;height:52px;border-radius:14px;display:inline-flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:14px}
+.step-card h5{font-size:15px;font-weight:600;margin:0 0 6px;color:var(--dark)}
+.step-card p{font-size:13px;color:var(--muted);margin:0;line-height:1.5}
+.step-arrow{color:var(--primary-blue);font-size:18px;align-self:center;flex-shrink:0}
+
+/* ===== Why + Become Nurse ===== */
+.why-section{padding:70px 0;background:#fff}
+.why-section .section-title.text-start{text-align:left;margin-bottom:24px}
+.why-card{
+  display:flex;gap:14px;padding:18px;background:#fff;
+  border:1px solid var(--border);border-radius:14px;
+  height:100%;transition:.25s;align-items:flex-start;
+}
+.why-card:hover{box-shadow:var(--shadow);transform:translateY(-2px);border-color:transparent}
+.why-icon{width:44px;height:44px;border-radius:12px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px}
+.why-card h6{font-size:14px;font-weight:600;margin:0 0 4px;color:var(--dark)}
+.why-card p{font-size:12px;color:var(--muted);margin:0;line-height:1.5}
+
+.become-nurse-card{background:linear-gradient(180deg,#e7f7ee,#fff 60%);border:1px solid #d1f0dc;border-radius:18px;padding:26px;height:100%}
+.become-nurse-card h3{font-weight:700;color:var(--dark);font-size:26px;margin-bottom:4px}
+.benefits-list{list-style:none;padding:0;margin:14px 0 0}
+.benefits-list li{font-size:13px;color:#374151;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.nurse-img{border-radius:14px;object-fit:cover;width:100%;max-height:220px}
+.nurse-form .form-control,.nurse-form .form-select{border-radius:8px;font-size:13px;padding:10px 12px}
+.upload-box{display:flex;align-items:center;gap:8px;border:1px dashed #cbd5e1;border-radius:8px;padding:10px;font-size:13px;color:var(--muted);background:#fff;cursor:pointer;height:100%}
+.register-btn{background:var(--success);border:0;border-radius:8px;font-weight:600;padding:12px}
+.register-btn:hover{background:#15803d}
+
+/* ===== Testimonials ===== */
+.testimonials-section{padding:70px 0;background:var(--soft)}
+#testimonialCarousel{padding:0 50px}
+.testimonial-card{
+  background:#fff;border-radius:16px;padding:24px;
+  box-shadow:var(--shadow-sm);height:100%;
+  border:1px solid var(--border);
+}
+.stars{color:#f59e0b;letter-spacing:2px;font-size:15px;margin-bottom:10px}
+.testimonial-card p{font-size:13px;color:#374151;font-style:italic;line-height:1.6}
+.reviewer{display:flex;align-items:center;gap:10px;margin-top:14px}
+.reviewer img{width:36px;height:36px;border-radius:50%}
+.reviewer span{font-size:12px;color:var(--muted);font-weight:500}
+.carousel-control-prev,.carousel-control-next{
+  width:42px;height:42px;background:#fff;border-radius:50%;
+  top:50%;transform:translateY(-50%);
+  box-shadow:var(--shadow);color:var(--dark);opacity:1;
+}
+.carousel-control-prev:hover,.carousel-control-next:hover{background:var(--primary-blue);color:#fff}
+.carousel-control-prev{left:0}.carousel-control-next{right:0}
+.carousel-dots{display:flex;justify-content:center;gap:6px;margin-top:22px}
+.carousel-dots .dot{width:8px;height:8px;border-radius:50%;background:#cbd5e1}
+.carousel-dots .dot.active{background:var(--primary-blue);width:22px;border-radius:4px}
+
+/* ===== Areas ===== */
+.areas-section{padding:70px 0}
+.areas-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:14px}
+.area-card{position:relative;border-radius:14px;overflow:hidden;aspect-ratio:1/1;box-shadow:var(--shadow-sm);cursor:pointer}
+.area-card img{width:100%;height:100%;object-fit:cover;transition:.4s}
+.area-card:hover img{transform:scale(1.08)}
+.area-card span{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(transparent,rgba(0,0,0,.75));color:#fff;font-size:12px;font-weight:600;padding:20px 10px 10px;text-align:center}
+
+/* ===== Urgent ===== */
+.urgent-section{padding:30px 0 70px}
+.urgent-banner{background:linear-gradient(135deg,#ffe9e9,#ffd6d6);border:1px solid #fbcaca;border-radius:18px;padding:22px 28px;display:flex;align-items:center;gap:22px;box-shadow:var(--shadow-sm)}
+.ambulance-img{width:90px;height:auto;flex-shrink:0}
+.urgent-text{flex:1}
+.urgent-text h4{font-weight:700;color:var(--dark);margin:0 0 4px;font-size:20px}
+.urgent-text p{color:#6b7280;font-size:13px;margin:0}
+.call-now-btn{background:var(--danger);border:0;border-radius:30px;padding:12px 30px;font-weight:600;color:#fff}
+.call-now-btn:hover{background:#dc2626;color:#fff}
+
+/* ===== Footer ===== */
+.site-footer{background:var(--soft);padding:60px 0 24px;color:#4b5563;font-size:13px}
+.footer-logo{font-weight:700;font-size:24px;color:var(--dark);margin-bottom:12px}
+.site-footer h6{font-weight:600;color:var(--dark);margin-bottom:14px;font-size:14px}
+.site-footer ul{list-style:none;padding:0;margin:0}
+.site-footer ul li{margin-bottom:8px}
+.site-footer ul li a{color:#4b5563;transition:.2s}
+.site-footer ul li a:hover{color:var(--primary-blue)}
+.social-icons{display:flex;gap:10px;margin-top:14px}
+.social-icons a{width:34px;height:34px;border-radius:50%;background:#fff;display:inline-flex;align-items:center;justify-content:center;color:var(--primary-blue);border:1px solid var(--border);transition:.2s}
+.social-icons a:hover{background:var(--primary-blue);color:#fff}
+.contact-list li{display:flex;gap:8px;align-items:flex-start}
+.contact-list li i{color:var(--primary-blue);margin-top:4px}
+.footer-bottom{font-size:12px;color:var(--muted);padding-top:10px}
+
+/* ===== Floating buttons ===== */
+.floating-buttons{position:fixed;right:14px;bottom:30px;display:flex;flex-direction:column;gap:10px;z-index:99}
+.float-btn{display:flex;flex-direction:column;align-items:center;justify-content:center;width:56px;height:56px;border-radius:50%;color:#fff;font-size:11px;text-align:center;box-shadow:0 6px 20px rgba(0,0,0,.2);line-height:1.1}
+.float-btn i{font-size:18px;margin-bottom:2px}
+.float-btn span{font-size:9px;font-weight:600}
+.call-btn{background:var(--primary-blue)}
+.whatsapp-btn{background:#25d366}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width:1199px){
+  .hero-title{font-size:36px}
+  .hero-gallery{height:500px}
+  .areas-grid{grid-template-columns:repeat(4,1fr)}
+  .section-title{font-size:26px}
+}
+
+@media (max-width:991px){
+  .header-search{display:none!important}
+  .main-nav{display:none!important}
+  .hero-section{padding:32px 0 40px}
+  .hero-title{font-size:30px;text-align:center}
+  .hero-gallery{height:420px;margin-top:28px}
+  .steps-wrap{flex-direction:column;align-items:stretch}
+  .step-arrow{transform:rotate(90deg);margin:4px 0}
+  .step-card{max-width:100%;width:100%}
+  .why-section .section-title.text-start{text-align:center}
+  .become-nurse-card{margin-top:28px}
+  .areas-grid{grid-template-columns:repeat(4,1fr)}
+  .urgent-banner{flex-direction:column;text-align:center}
+  .ambulance-img{width:70px}
+  #testimonialCarousel{padding:0 40px}
+}
+
+@media (max-width:767px){
+  .site-header{padding:10px 0}
+  .logo{font-size:20px}
+  .hero-section{padding:24px 0 36px}
+  .hero-title{font-size:26px;margin-bottom:22px}
+  .services-card{padding:18px}
+  .service-icon{width:46px;height:46px;font-size:19px;border-radius:12px}
+  .service-item p{font-size:11px}
+  .service-item{padding:8px 2px}
+  .hero-gallery{height:360px;gap:10px}
+  .section-title{font-size:22px;margin-bottom:24px}
+  .trust-row{gap:8px}
+  .trust-item{font-size:11px;min-width:100%;padding:8px 12px}
+
+  /* How It Works mobile — 2 col grid */
+  .howitworks-section{padding:48px 0}
+  .steps-wrap{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .step-arrow{display:none}
+  .step-card{padding:18px;max-width:100%}
+  .step-icon{width:44px;height:44px;font-size:18px;margin-bottom:10px}
+  .step-card h5{font-size:13px}
+  .step-card p{font-size:11px}
+
+  /* Why Choose mobile */
+  .why-section{padding:48px 0}
+  .why-card{padding:14px;gap:10px}
+  .why-icon{width:38px;height:38px;font-size:15px}
+  .why-card h6{font-size:13px}
+
+  /* Testimonials mobile */
+  .testimonials-section{padding:48px 0}
+  #testimonialCarousel{padding:0 12px}
+  .testimonial-card{margin-bottom:12px;padding:18px}
+  .carousel-control-prev,.carousel-control-next{display:none}
+
+  .areas-section{padding:48px 0}
+  .areas-grid{grid-template-columns:repeat(3,1fr);gap:10px}
+
+  .urgent-section{padding:20px 0 48px}
+  .urgent-banner{padding:18px}
+
+  .site-footer{padding:48px 0 20px;text-align:center}
+  .social-icons{justify-content:center}
+  .contact-list li{justify-content:center}
+  .footer-bottom{flex-direction:column;gap:6px;text-align:center}
+  .floating-buttons{right:10px;bottom:20px}
+  .float-btn{width:50px;height:50px}
+}
+
+@media (max-width:575px){
+  .hero-title{font-size:23px}
+  .header-icons .icon-btn{width:34px;height:34px;font-size:13px}
+  .hero-gallery{height:300px;gap:8px}
+  .services-card .col-3{flex:0 0 50%;max-width:50%}
+  .become-nurse-card{padding:18px}
+  .become-nurse-card h3{font-size:20px}
+  .nurse-img{max-height:180px}
+  .urgent-text h4{font-size:16px}
+  .call-now-btn{padding:10px 22px;font-size:14px}
+  .areas-grid{grid-template-columns:repeat(2,1fr)}
+  .area-card span{font-size:11px;padding:14px 6px 6px}
+  .g-badge{font-size:10px;padding:4px 10px;top:8px;left:8px}
+}
+
+@media (max-width:400px){
+  .steps-wrap{grid-template-columns:1fr}
+}
+
+/* Touch devices */
+@media (hover:none){
+  .service-item:hover,.why-card:hover,.area-card:hover img,.step-card:hover,.g-img:hover img{transform:none}
+}
