@@ -30,8 +30,8 @@ Route::post('/become-a-nurse', [HomeController::class, 'store'])->name('nurse.re
 //     dd('Exact match works');
 // });
 
-Route::get('/{slug}', [ServiceController::class, 'show'])
-    ->name('service.area');
+// Route::get('/{slug}', [ServiceController::class, 'show'])
+//     ->name('service.area');
 
 Route::get('/category/{category_slug}-in-{area_slug}', function ($category_slug, $area_slug) {
     dd($category_slug, $area_slug);
