@@ -141,11 +141,11 @@
                     alt="User Image"
                   />
                 @else
-                  <img
+                  {{-- <img
                     src="{{ Vite::asset('resources/images/profile-image.png')}}"
                     class="user-image rounded-circle"
                     alt="User Image"
-                  />
+                  /> --}}
                 @endif
                 {{-- <span class="d-none d-md-inline">{{Auth::user()->name}}</span> --}}
               </a>
@@ -158,11 +158,11 @@
                       alt="User Image"
                     />
                   @else 
-                    <img
+                    {{-- <img
                       src="{{ Vite::asset('resources/images/profile-image.png')}}"
                       class="rounded-circle shadow"
                       alt="User Image"
-                    />
+                    /> --}}
                   @endif
                   <p>
                     {{Auth::user()->name}}

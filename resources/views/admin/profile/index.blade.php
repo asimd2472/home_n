@@ -32,7 +32,7 @@
                                     @if ($user_details->profile_image!='')
                                         <div id="imagePreview" style="background-image: url('{{asset('storage/images/'.$user_details->profile_image)}}');"></div>
                                     @else
-                                        <div id="imagePreview" style="background-image: url('{{ Vite::asset('resources/images/profile-image.png')}}');"></div>
+                                        {{-- <div id="imagePreview" style="background-image: url('{{ Vite::asset('resources/images/profile-image.png')}}');"></div> --}}
                                     @endif
                                 </div>
                             </div>
