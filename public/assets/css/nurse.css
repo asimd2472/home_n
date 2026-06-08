@@ -11,6 +11,7 @@
 .search-field+.search-field{border-left:1px dashed #d8e0ee}
 .search-field i{color:var(--primary);font-size:14px}
 .search-field input{border:0;background:transparent;outline:none;width:100%;font-size:14px;color:var(--heading);font-weight:500}
+.search-field select{border:0;background:transparent;outline:none;width:100%;font-size:14px;color:var(--heading);font-weight:500}
 .btn-search{border:0;background:linear-gradient(135deg,var(--primary),var(--primary-glow));color:#fff;font-weight:600;padding:12px 22px;border-radius:10px;display:inline-flex;align-items:center;gap:8px;font-size:14px;box-shadow:0 10px 22px -10px rgba(30,109,255,.6);transition:.25s}
 .btn-search:hover{transform:translateY(-1px);filter:brightness(1.05)}
 .prime-tag{justify-content:flex-end;align-items:center;gap:10px;margin-top:10px;font-size:13px}
@@ -121,5 +122,5 @@
   .nurse-photo{width:72px;height:72px}
   .verified-dot{width:22px;height:22px;font-size:14px}
   .nurse-actions{flex-direction:column}
-  .btn-book,.btn-contact{width:100%}
+  .btn-book,.btn-contact{width:40%}
 }

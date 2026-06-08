@@ -48,13 +48,18 @@ class ServiceController extends Controller
 
         // dd($nurses);
 
+        $all_category = Category::all();
+        $all_area = Arealocation::all();
+
 
             return view(
                 'frontend.nurse-listing',
                 compact(
                     'category',
                     'area',
-                    'nurses'
+                    'nurses',
+                    'all_category',
+                    'all_area'
                 )
             );
     }

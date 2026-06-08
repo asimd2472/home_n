@@ -184,7 +184,7 @@
                     <div class="bn-grid">
                         <div class="bn-field bn-col-2">
                             <label>Current Address <span class="required">*</span></label>
-                            <input type="text" name="address" value="{{ old('address') }}" required>
+                            <input type="text" name="address" value="{{ old('address') }}" placeholder="Ballygunge" required>
                         </div>
                         <div class="bn-field">
                             <label>City <span class="required">*</span></label>

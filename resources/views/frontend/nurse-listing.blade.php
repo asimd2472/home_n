@@ -14,11 +14,21 @@
     <div class="search-row">
       <div class="search-field">
         <i class="fa-solid fa-location-dot"></i>
-        <input type="text" value="Ballygunge, Kolkata" placeholder="Enter your area">
+        {{-- <input type="text" value="Ballygunge, Kolkata" placeholder="Enter your area"> --}}
+        <select name="all_area" id="all_area">
+          @foreach($all_area as $areas)
+            <option value="{{$areas->slug}}" {{$areas->id==$area->id ? 'selected' : '' }}>{{$areas->area_name}}</option>
+          @endforeach
+        </select>
       </div>
       <div class="search-field">
         <i class="fa-solid fa-user-nurse"></i>
-        <input type="text" value="Elder Care Nurse" placeholder="Service type">
+        {{-- <input type="text" value="Elder Care Nurse" placeholder="Service type"> --}}
+        <select name="all_category" id="all_category">
+          @foreach($all_category as $category)
+            <option value="{{$category->slug}}" {{$category->id==$category->id ? 'selected' : '' }}>{{$category->name}}</option>
+          @endforeach
+        </select>
       </div>
       <button class="btn-search"><i class="fa-solid fa-magnifying-glass"></i><span>Search</span></button>
     </div>
@@ -39,19 +49,19 @@
       <div class="filter-chip">
         <select><option>Experience</option><option>1-3 yrs</option><option>3-5 yrs</option><option>5+ yrs</option></select>
       </div>
-      <div class="filter-chip">
+      {{-- <div class="filter-chip">
         <select><option>Shift</option><option>Day</option><option>Night</option><option>24 Hours</option></select>
-      </div>
+      </div> --}}
       <div class="filter-chip">
         <select><option>Languages</option><option>English</option><option>Hindi</option><option>Bengali</option></select>
       </div>
-      <div class="filter-chip">
+      {{-- <div class="filter-chip">
         <select><option>All Filters</option></select>
-      </div>
-      <div class="filter-sort">
+      </div> --}}
+      {{-- <div class="filter-sort">
         <span>Sort By</span>
         <select><option>Relevance</option><option>Top Rated</option><option>Most Experienced</option><option>Lowest Fee</option></select>
-      </div>
+      </div> --}}
     </div>
   </div>
 </section>
@@ -64,31 +74,33 @@
       <!-- Main column -->
       <div class="col-lg-8">
         <div class="listing-head">
-          <h1 class="listing-title">24 Verified Nurses available in Ballygunge, Kolkata</h1>
+          <h1 class="listing-title">{{count($nurses)}} Verified Nurses available in {{$area->area_name}}</h1>
           <p class="listing-sub"><i class="fa-solid fa-circle-check"></i> Background-verified caregivers • Arrives within 60 min • No booking fee</p>
         </div>
 
         <!-- Nurse card -->
+
+        @foreach($nurses as $nurse)
         <article class="nurse-card">
           <div class="nurse-photo">
-            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=300&q=80" alt="Priya Sharma">
+            <img src="{{asset('storage/'.$nurse->profile_image)}}" alt="Priya Sharma">
             <span class="verified-dot" title="Verified"><i class="fa-solid fa-circle-check"></i></span>
           </div>
           <div class="nurse-body">
             <div class="nurse-top">
               <h3 class="nurse-name">Priya Sharma</h3>
-              <p class="nurse-role">Elder Care Specialist</p>
+              <p class="nurse-role">{{$category->name}} Specialist</p>
               <p class="nurse-meta">8 years experience overall</p>
               <p class="nurse-location"><i class="fa-solid fa-location-dot"></i> Ballygunge, Kolkata</p>
               <div class="nurse-tags">
                 <span class="tag tag-primary"><i class="fa-solid fa-shield-halved"></i> CareBond Assured</span>
-                <span class="tag tag-soft">Elder Care + 3 more</span>
+                <span class="tag tag-soft">{{$category->name}} + {{count($nurse->categories)}} more</span>
               </div>
               <p class="nurse-fee">₹1,200 <span>/ day shift at home</span> <i class="fa-regular fa-circle-question"></i></p>
             </div>
             <div class="nurse-rating">
-              <span class="rating-pill"><i class="fa-solid fa-thumbs-up"></i> 96%</span>
-              <a href="#" class="stories-link">128 Family Reviews</a>
+              {{-- <span class="rating-pill"><i class="fa-solid fa-thumbs-up"></i> 96%</span>
+              <a href="#" class="stories-link">128 Family Reviews</a> --}}
             </div>
           </div>
           <div class="nurse-actions">
@@ -97,8 +109,9 @@
             <button class="btn btn-contact"><i class="fa-solid fa-phone"></i> Contact</button>
           </div>
         </article>
+        @endforeach
 
-        <article class="nurse-card">
+        {{-- <article class="nurse-card">
           <div class="nurse-photo">
             <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=300&q=80" alt="Anjali Das">
             <span class="verified-dot"><i class="fa-solid fa-circle-check"></i></span>
@@ -183,17 +196,17 @@
             <button class="btn btn-book">Book Nurse<small>No Booking Fee</small></button>
             <button class="btn btn-contact"><i class="fa-solid fa-phone"></i> Contact</button>
           </div>
-        </article>
+        </article> --}}
 
         <!-- Pagination -->
-        <nav class="pager">
+        {{-- <nav class="pager">
           <button class="pg-btn" disabled><i class="fa-solid fa-chevron-left"></i></button>
           <button class="pg-btn active">1</button>
           <button class="pg-btn">2</button>
           <button class="pg-btn">3</button>
           <button class="pg-btn">4</button>
           <button class="pg-btn"><i class="fa-solid fa-chevron-right"></i></button>
-        </nav>
+        </nav> --}}
       </div>
 
       <!-- Sidebar -->
